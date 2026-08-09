@@ -62,7 +62,7 @@ const classInfo = {
     city: "Delhi",
   },
 };
-// Three individual objects inside classInfo object. 
+// Three individual objects inside classInfo object.
 
 // Array of objects-Storing information of multiple students.
 const stud = [
@@ -82,3 +82,44 @@ const stud = [
     city: "Gola",
   },
 ];
+
+//Math Object.
+// Properties-->
+// Math.PI,Math.E
+//Methods-->
+// Math.abs(n),Math.pow(a,b),Math.floor(n)-->roundoff on smaller number,Math.ceil(n)-->roundoff on larger integer value,Math.random()-->gives value b/w 0and1 and 1 in inclusive..
+
+// By the help of Math.random we can generate number from 1 to 10.
+let num = Math.random();
+num = num * 10; // This is range in which we want to generate the numbers(i.e 10).
+num = Math.floor(num);
+num = num + 1;
+console.log(num);
+
+//================
+//Guessing Game---
+//================
+
+// User Enter a max number and then tries to guess a random generated number b/w 1 to max.
+const maxNum = prompt("Enter maximum number");
+console.log(maxNum);
+let randomNum = Math.floor(Math.random() * maxNum) + 1;
+// console.log(randomNum);
+let guess = prompt("Guess the number");
+while (true) {
+  if (guess == "quit") {
+    console.log("User Quit");
+    break;
+  }
+  if (guess == randomNum) {
+    console.log("You are right Congrats!! random number was", randomNum);
+    break;
+  } else if (guess < randomNum) {
+    guess = prompt("hint:Your guess was to small. plesse try again");
+  } else if (guess > randomNum) {
+    guess = prompt("hint:Your guess was to large. plesse try again");
+  }
+  // else {
+  //   guess = prompt("Your guess was wrong. please try again ");
+  // }
+}
