@@ -59,4 +59,4 @@ console.dir(para.innerHTML); //COntent of <p> tag visible in page with tags, And
 
 let img = document.querySelector("img");
 img.getAttribute("id"); //mainImg
-// img.setAttribute('id',"spiderImg");//mainImg img---->spiderImg.
+// img.setAttribute('id',"spiderImg");//mainImg img---->spiderImg
