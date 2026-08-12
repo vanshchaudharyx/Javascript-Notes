@@ -30,3 +30,6 @@ for (let i = 0; i < smallImages.length; i++) {
   console.dir(smallImages[i]);
   console.dir(smallImages[i].src);
 }
+
+//Get Elements by tag name=> Return the elements as an HTML collection or empty collection(if not found).
+document.getElementsByTagName("P");
