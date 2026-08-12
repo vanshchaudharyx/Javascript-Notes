@@ -20,3 +20,13 @@ let imgObj = document.getElementById("mainImg"); // If we print objImg then we s
 console.log(imgObj.tagName);
 console.log(imgObj.src);
 console.log(imgObj.id);
+
+//Get Elements by class=> Returns the elements as an HTML collection or empty collection(if not found).
+document.getElementsByClassName("oldImg")[0]; //First image of oldImg collection.
+let smallImages = document.getElementsByClassName("oldImg");
+// console.dir(smallImages);
+
+for (let i = 0; i < smallImages.length; i++) {
+  console.dir(smallImages[i]);
+  console.dir(smallImages[i].src);
+}
