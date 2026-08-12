@@ -130,7 +130,8 @@ let names = ["tony", "bruce", "steve", "peter", "abc", "pyq", "xyz"];
 // We can do this with destructuring..
 let [winner, runnerup, secondRunnerup] = names;
 console.log(winner, runnerup, secondRunnerup);
-//lets suppose we have remaining values after assigning. for collecting that remaining that values we can use rest.
+//lets suppose we have remaining values after assigning. for collecting that remaining 
+// that values we can use rest.
 let [win, run, ...others] = names;
 
 //Destructuring on objects-->
