@@ -33,3 +33,30 @@ for (let i = 0; i < smallImages.length; i++) {
 
 //Get Elements by tag name=> Return the elements as an HTML collection or empty collection(if not found).
 document.getElementsByTagName("P");
+
+// Query Selectors==> Allow us to use any css selector.
+// document.querySelector("p"); // Selects first p element
+// document.querySelector("#myId"); // Selects first  element with id= myID
+// document.querySelector(".myClass"); // Selects first  element with class=myClass
+// document.querySelectorAll("p"); // Selects all  p element.
+
+//Query selector is only used for selecting single element.
+console.dir(document.querySelector("h1"));
+console.dir(document.querySelector("div a")); //1st Anchor tags inside div.
+
+//Manipulating the elements=>
+// innerText= Shows the visible text contained the nodes.
+// textContent=> Shows all the full text.
+// innerHtml=> Shows the full markup.
+
+let para = document.querySelector("p");
+console.dir(para.innerText); //COntent of <p> tag visible in page.Takes content from whatever is visible on screen.
+console.dir(para.innerHTML); //COntent of <p> tag visible in page with tags, And if we change something then .innerHtml recognizes the tags.
+
+//Manipulating Attributes==>(class,id,styling,src)
+// obj.getAttribute(attr);=>for any object gives some specific attribute value.
+// obj.setAttribute(attr,val);
+
+let img = document.querySelector("img");
+img.getAttribute("id"); //mainImg
+// img.setAttribute('id',"spiderImg");//mainImg img---->spiderImg.
