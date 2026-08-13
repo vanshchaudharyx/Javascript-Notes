@@ -41,6 +41,35 @@ para.addEventListener("click", function () {
 // When 'this' is used in a callback of event handler of something,it refers to that something.
 //When we create event listener for any object then we use this at the place of callback.
 btn.addEventListener("click", function () {
-  console.log(this);//<button>Click me</button>
+  console.log(this); //<button>Click me</button>
   //This refers to the button.
 });
+
+//Keyboard Events==>
+let keyEvent = document.querySelector(".keyEvent");
+keyEvent.addEventListener("dblclick", function (event) {
+  console.log(event); //MouseEvent
+  console.log("button clicked");
+});
+
+let inp = document.querySelector("input");
+
+inp.addEventListener("keydown", function (event) {
+  console.log(event);
+  console.log(event.key);
+  console.log(event.code);
+  console.log("key was pressed goes down");
+});
+inp.addEventListener("keyup", function () {
+  console.log("key was pressed goes up");
+});
+
+//Form Events.
+let form = document.querySelector("form");
+form.addEventListener("submit", function () {
+  event.preventDefault(); //Prevent the default work.
+  alert("form submitted");
+});
+
+
+
