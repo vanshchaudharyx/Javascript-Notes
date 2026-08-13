@@ -60,3 +60,32 @@ console.dir(para.innerHTML); //COntent of <p> tag visible in page with tags, And
 let img = document.querySelector("img");
 img.getAttribute("id"); //mainImg
 // img.setAttribute('id',"spiderImg");//mainImg img---->spiderImg
+
+//Manipulating Style=> style property=>obj.style.
+console.dir(img);
+let heading = document.querySelector("h1");
+heading.style.color = "purple";
+
+//We want to change the styling for anchor tags/
+let link = document.querySelectorAll(".box a");
+
+for (let i = 0; i < link.length; i++) {
+  link[i].style.color = "yellow";
+}
+//Styling property is not very frequently used to style objects.
+
+//Manipulating Style==> Using classList
+
+console.dir(img.classList); //This shows the class of any objects.
+//We can also add class if not exists.
+// img.classList.add("img");
+// img.classList.remove("img"); to remove class.
+// img.classList.contains("img"); to check is class exists
+// img.classList.toggle("img"); to toggle bw add and remove (if exists then remove ,if not exists then add).
+
+//Navigation=> By the help of navigation we go from one element to another element.
+// parentElement,children,previousElementSibling,nextElementSibling.
+
+let h4 = document.querySelector("h4");
+h4.parentElement; //<div class="box">…</div>
+let di = document.querySelector(".box"); //HTMLCollection(2) [h4, ul]
