@@ -89,3 +89,16 @@ console.dir(img.classList); //This shows the class of any objects.
 let h4 = document.querySelector("h4");
 h4.parentElement; //<div class="box">…</div>
 let di = document.querySelector(".box"); //HTMLCollection(2) [h4, ul]
+
+//Adding Elements
+// document.createElement('p');
+//After creating element we have to insert the element in our document.
+
+// appendChild(Element);
+// append(element); // We can directly change in that element.
+// prepend(element);
+// insertAdjacent(where, element); //Define where we exactly we want totadd element.
+
+//Removing Element from page.\
+removeChild(element); //parent element is body the => body.removeChild(btn)
+remove(element);//Directly remove => btn.remove().
