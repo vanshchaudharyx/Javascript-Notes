@@ -71,5 +71,25 @@ form.addEventListener("submit", function () {
   alert("form submitted");
 });
 
+//Extracting form data==>
+let form2 = document.querySelector(".extractdata");
+form2.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let inp = document.querySelector(".input");
+  console.log(inp); //<input placeholder="Input" class="input"></input>
+  console.log(inp.value); //Here innertext property not work for input.
+});
 
+//More Events==>
+// change event==> The change event occurs when the value of an element has been changed(only work on <input>,<textarea>,and<select> elements).
+//input event==> The input event fires when the value of an <input>,<select>, or <textarea> element has been changed.
 
+let forms = document.querySelector(".extractdata");
+forms.addEventListener("change", function () {
+  //This change only tracks the state bw initial and final.
+  event.preventDefault();
+
+  console.log("input changed");
+  console.log("final value", forms.value);
+});
+//For every element tracking we use input// This only detects character keys.
