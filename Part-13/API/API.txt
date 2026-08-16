@@ -1,0 +1,68 @@
+Whenever we access a website that means we sent a request to server.
+And then server sent response.
+(This is our request response cycle).
+
+API-Application programming interface.
+API is like a waiter in restaurant take order and deliver food from kitchen. Here kitchen is server.
+
+When two software need interaction then need API.
+API use http protocol called WEB API.
+
+In our case APIs return data in the form of JSON format.
+
+JSON(Javascript Object Notation)=>www.json.org
+Before JSON we have XML format..
+
+JSON (JavaScript Object Notation) is a lightweight
+data-interchange format.
+
+It is primarily designed for machines/software to
+store and exchange data, but its structure is also
+easy for humans to read and understand.l
+
+We have various types of JSON validators.
+https://jsonlint.com
+
+Accessing Data from JSON==>
+JSON.parse(data) Method=> To parse a string data into JS object.
+
+JSON.stringify(json) Method=>
+To parse a JS object into JSON.
+
+Testing API requests==>
+Tools-
+Hoppscotch(https://hoppscotch.io/)
+Postman
+
+AJAX- Asynchronus JS and XML
+This is a process through which we call api and get data asynchronusly.
+// AJAX is a technique used to communicate with a server
+// asynchronously without reloading the entire webpage.
+//
+// It allows JavaScript to send requests to an API/server
+// and receive data in the background.
+//
+// Although its name contains XML, modern APIs commonly
+// use JSON instead of XML.
+
+Https Verbs->
+Get,Post,Delete
+
+Status Codes->Whenever we get response from API at that time we have different-2 types of status code.
+200-OK,Everything worked 
+404-Not found
+400-Bad request
+500-Internal Server Error.
+
+Adding Informations in URLs-->
+Query Strings-
+https://example.com/search?city=delhi
+
+?city=delhi
+   ↑     ↑
+  key   value
+  
+Http Headers->Additional info in req and response both
+All additional data is not in URLs but in headers.
+
+
