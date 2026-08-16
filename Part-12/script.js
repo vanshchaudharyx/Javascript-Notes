@@ -89,3 +89,49 @@ changeColor("red", 1000, () => {
 //This is not a good way to do such things, we put a callback in changeColor func
 
 //There are multiple things in JS that prevent us from callback hell that is promises,async,await.
+
+//Promises=> The promise object represents the eventual completion (or failure) of an asynchronus operation and its resulting value.
+
+//Here we use a small concept of Databases=>
+function savetoDb(data, success, failure) {
+  let internetSpeed = Math.floor(Math.random() * 10) + 1;
+  if (internetSpeed > 4) {
+    // console.log("data saved");
+    success();
+  } else {
+    // console.log("weak connection");
+    failure();
+  }
+}
+savetoDb(
+  "Vansh Chaudhary",
+  () => {
+    console.log("data1:data saved");
+    //If this executes successfully then we add out 2nd data
+    savetoDb(
+      "Software Engineer",
+      () => {
+        console.log("data2:data saved");
+        //If this executes successfully then we add out 3rd data
+        savetoDb(
+          "Hello",
+          () => {
+            console.log("data3:data saved");
+          },
+          () => {
+            console.log("data3:weak connection. data not saved ");
+          },
+        );
+      },
+      () => {
+        console.log("data2:weak connection. data not saved");
+      },
+    );
+  },
+  () => {
+    console.log("weak connection. data not saved");
+  },
+);
+//This dangerous nesting is called callback hell.
+//This type of situation in exists in real life situations.
+
