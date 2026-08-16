@@ -135,3 +135,71 @@ savetoDb(
 //This dangerous nesting is called callback hell.
 //This type of situation in exists in real life situations.
 
+//Promises=> The promise object represents the eventual completion (or failure) of an asynchronus operation and its resulting value.
+//Promise is an object
+// Resolve=>success
+// Reject=>failure
+// Now made the new version of above code.
+function PromiseSavetoDb(data) {
+  return new Promise((resolve, reject) => {
+    let internetSpeed = Math.floor(Math.random() * 10) + 1;
+    if (internetSpeed > 4) {
+      resolve("data was saved"); //[[PromiseResult]]: "data was saved"
+    } else {
+      reject("weak connection");
+    }
+  });
+}
+
+//Promises frequently used methods=> then()& catch().
+// If we want some work after fulfilling promise then we use then() method.
+//If we want some work after failure of promise then we use catch() method.
+let req = PromiseSavetoDb("Vansh");
+req
+  .then(() => {
+    console.log("promise was resolved");
+  })
+  .catch(() => {
+    console.log("promise was rejected");
+  });
+
+//Promise chaining==>
+let request = PromiseSavetoDb("Vansh");
+request
+  .then(() => {
+    console.log("data1 saved");
+    PromiseSavetoDb("hello world").then(() => {
+      console.log("data2 saved");
+    });
+  })
+  //Single catch handles all promises errors.
+  .catch(() => {
+    console.log("promise was rejected");
+  });
+
+//============================================
+// This is actual promise chaining============
+//============================================
+// let request = PromiseSavetoDb("Vansh");
+// request
+//   .then(() => {
+//     console.log("data1 saved");
+//     return PromiseSavetoDb("data2");
+//   })
+//   .then(() => {
+//     console.log("data2 saved");
+//   })
+//   //Single catch handles all promises errors.
+//   .catch(() => {
+//     console.log("promise was rejected");
+//   });
+
+//Promises are rejected and resolved with some data(valid results or errors).
+
+// .then((result)=>{
+//   console.log(result)
+// })
+
+// .catch((error)=>{
+//   console.log(error)
+// })
