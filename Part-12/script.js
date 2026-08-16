@@ -27,3 +27,65 @@ function three() {
   console.log(ans);
 }
 //After termination of three function we won't able to access the ans.(Function scope).
+
+// Breakpoints==> We track call stack through our browser with the help opf breakpoint.
+// Breakpoints are generally used for debugging.
+three(); // after this line we can see the call stack on the browser's console.
+
+//JS is single threaded language that means one thing of a code is executed at a time..
+console.log("JS is Single Threaded");
+let a = 25;
+console.log(a);
+let b = 10;
+console.log(b);
+console.log(a + b);
+//This above code shows the synchronus nature of JS.
+
+//Sometimes while doing programmming with JS it is not possible that some tasks continously worked in sequence.
+// Like api calling-- sometimes recieving response from API takes time so at that instance JS waits or not or what happens.
+//For dealing with single threaded nature of JS we have some things like Callbacks.
+//WE can also make setTimeout function to tackle that situation.
+setTimeout(() => {
+  console.log("Vansh Chaudhary");
+}, 2000);
+setTimeout(() => {
+  console.log("Software Engineer");
+}, 2000);
+console.log("hello...");
+//This above code the asynchronus nature of JS.
+
+// As a begininer we thought that how this possible that JS waits because wait is a work in programming languages.
+//If JS is multithreaded so how's that possible.
+//This waiting work is done by the browser and browsers are generally written in C++ or Java languages that are multithreaded language.
+//Working=> setTimeout function is kept by the browser and wait for that and JS runs normal code,when the delay comoleted browser put that function in the callStack at top and then JS executes that function.
+
+//Callback Hell=> This cause due to asynchronus nature of JS.
+function changeColor(color, delay, nextColorChange) {
+  setTimeout(() => {
+    h1.style.color = color;
+    if (nextColorChange) nextColorChange();
+  }, delay);
+}
+h1 = document.querySelector("h1");
+// setTimeout(() => {
+//   h1.style.color = "red";
+// }, 1000);
+// setTimeout(() => {
+//   h1.style.color = "orange";
+// }, 2000);
+// setTimeout(() => {
+//   h1.style.color = "green";
+// }, 3000);
+//We dont calculate the delay again and again. Let we create a function in line no= 63
+// changeColor("red", 1000);
+// changeColor("orange", 2000);
+// changeColor("green", 3000);
+changeColor("red", 1000, () => {
+  changeColor("orange", 1000, () => {
+    changeColor("green", 1000);
+    //Callback nesting=> This phenomenon is knows as callback hell.
+  });
+});
+//This is not a good way to do such things, we put a callback in changeColor func
+
+//There are multiple things in JS that prevent us from callback hell that is promises,async,await.
