@@ -164,9 +164,9 @@ The repository is continuously updated as I progress through JavaScript and move
 ├── 🧠 Part-13
 │
 ├── 🌐 Part-14
+├── 🧩 Part-15 (OOPs)
 │
 ├── 📄 FreeAPI.txt
-├── 📜 LICENSE
 └── 📖 README.md
 ```
 <br>
